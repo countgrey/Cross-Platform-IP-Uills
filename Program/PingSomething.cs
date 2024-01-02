@@ -8,20 +8,27 @@ internal class PingSomething
 
     public static string PingCurrentAddress()
     {
-        Ping ping = new Ping();
-        PingOptions options = new PingOptions();
-
-        options.DontFragment = true;
+        Ping ping = new();
+        PingOptions options = new()
+        {
+            DontFragment = true
+        };
 
         string data = "********************************";
         byte[] buffer = Encoding.ASCII.GetBytes(data);
         int timeout = 120;
-        PingReply reply = ping.Send(IpAddressOperations.Address, timeout, buffer, options);
+        PingReply reply;
 
-        if (reply.Status == IPStatus.Success)
+        if (IpAddressOperations.Address != " ")
         {
-            return $"Address: {reply.Address}      RoundTrip time: {reply.RoundtripTime}";
+            reply = ping.Send(IpAddressOperations.Address, timeout, buffer, options);
+            if (reply.Status == IPStatus.Success)
+            {
+                return $"Address: {reply.Address}      RoundTrip time: {reply.RoundtripTime} ms";
+            }
         }
+
+        
 
         return "Error";
     }

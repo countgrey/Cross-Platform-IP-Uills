@@ -10,6 +10,7 @@ public partial class MainPage : ContentPage
 
     private void OnPingClicked(object sender, EventArgs e)
     {
+        IpAddressOperations.Address = IpAddressText.Text;
         TextBox.Text = PingSomething.PingCurrentAddress();
     }
 }

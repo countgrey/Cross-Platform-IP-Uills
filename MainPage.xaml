@@ -16,7 +16,7 @@
             <Entry
                 x:Name="IpAddressText"
                 Text="8.8.8.8"
-                Keyboard="Numeric"
+                IsSpellCheckEnabled="False"
                 HorizontalTextAlignment="Center"
                 FontAttributes="Bold"
                 FontSize="18"
@@ -25,7 +25,7 @@
                 Grid.Row="1"/>
 
             <Button 
-                x:Name = "CallButton"
+                x:Name = "PingButton"
                 Clicked="OnPingClicked"
                 Grid.Row="2"
                 Text = "PING"
