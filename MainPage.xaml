@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPUills.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Margin="10" Spacing="10">
+
+            <Label
+                Text="IP Utils"
+                Grid.Row="0"
+                FontSize="52"
+                FontAttributes="Bold"
+                FontAutoScalingEnabled="True"
+                HorizontalOptions="Center"/>
+
+            <Entry
+                x:Name="IpAddressText"
+                Text="8.8.8.8"
+                Keyboard="Numeric"
+                HorizontalTextAlignment="Center"
+                FontAttributes="Bold"
+                FontSize="18"
+                FontAutoScalingEnabled="True"
+                Placeholder="Enter Address"
+                Grid.Row="1"/>
+
+            <Button 
+                x:Name = "CallButton"
+                Clicked="OnPingClicked"
+                Grid.Row="2"
+                Text = "PING"
+                FontAttributes="Bold"
+                FontSize="24"
+                FontAutoScalingEnabled="True"
+                IsEnabled = "True"/>
+
+            <Editor
+                x:Name="TextBox"
+                Grid.Row="3"
+                HorizontalTextAlignment="Center"
+                AutoSize="TextChanges"
+                FontAttributes="Bold"
+                FontSize="18"
+                FontAutoScalingEnabled="True"
+                VerticalOptions="Fill"/>
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
